@@ -34,7 +34,7 @@ const menus = $computed(() => {
         }
         for(const m of router.getRoutes()){
             const menu = m.children.find(f => f.name == name)
-            if(menu){
+            if(menu?.title){
                 return menu;
             }
         }

@@ -1,6 +1,6 @@
 {
     "name": "@everalan/vue-admin",
-    "version": "0.0.2",
+    "version": "0.0.4",
     "description": "vue admin",
     "main": "index.js",
     "type": "module",
