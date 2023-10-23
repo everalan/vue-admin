@@ -38,10 +38,10 @@
                         <li class="nav-item" v-if="menu.children.length" :class="{ 'menu-open': menu.active() }" ref="list">
                             <a href="javascript:void(0)" @click="toggleMenu" class="nav-link"
                                 :class="{ 'router-link-active': menu.active() }">
-                                <i class="nav-icon me-2 bi" :class="menu.icon"></i>
+                                <i class="nav-icon" :class="menu.icon"></i>
                                 <p>
                                     {{ menu.title }}
-                                    <i class="right bi bi-chevron-left"></i>
+                                    <i class="right bi-chevron-left"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
@@ -56,7 +56,7 @@
                         <li class="nav-item" v-else>
                             <router-link :to="{ name: menu.name }" class="nav-link" :name="menu.name"
                                 :is-root="menu.name == dashboardName ? true : null">
-                                <i class="nav-icon me-2 bi" :class="menu.icon"></i>
+                                <i class="nav-icon" :class="menu.icon"></i>
                                 <p>
                                     {{ menu.title }}
                                 </p>
@@ -279,7 +279,7 @@ body.sidebar-open {
         border-radius: 4px;
     }
 
-    >.nav-item>.nav-link.router-link-active:not([is-root]),
+    .nav-link.router-link-active:not([is-root]),
     .nav-link.router-link-exact-active,
     .nav-link:hover {
         color: rgba(var(--bs-emphasis-color-rgb), 1);
@@ -325,9 +325,8 @@ body.sidebar-open {
         .nav-icon {
             margin-left: .05rem;
             font-size: 1rem;
-            margin-right: .2rem;
+            margin-right: .4rem;
             text-align: center;
-            width: 1.6rem;
         }
 
         .float-right {
@@ -340,14 +339,6 @@ body.sidebar-open {
         display: none;
         list-style: none;
         padding: 0;
-
-        >.nav-item {
-            >.nav-link {
-                >.nav-icon {
-                    width: 1.6rem;
-                }
-            }
-        }
     }
 
 
@@ -387,10 +378,11 @@ body.sidebar-open {
     min-height: calc(100vh - 57px);
 
     .left {
-        width: 250px;
+        width: 200px;
         flex: none;
         transition: margin-left .3s ease-in-out, width .3s ease-in-out;
         background-color: var(--bs-body-bg);
+        margin-right:1rem;
 
         @include media-breakpoint-down(md) {
             position: fixed;
